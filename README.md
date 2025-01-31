@@ -6,7 +6,10 @@ This root module really helps you reduce idle battery consumption with minimal t
 
 > [!WARNING]
 > This module affects the system, so it is not recommended to use it without looking at the list.
->
+
+> [!TIP]
+> If you want to learn about battery life, check out this repo. It's also very useful if you have an older device.
+> [Android-Life-Knowledge] (https://github.com/tryigit/Android-Life-Knowledge).
 
 ## Known Effects
 + Apps opening time is longer, especially on older devices.
