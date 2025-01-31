@@ -1,1 +1,6 @@
-
+{
+    "version": "v1.0.0",
+    "versionCode": 100,
+    "zipUrl": "https://github.com/tryigit/BatteryNova/releases/download/V1.0.0/BatteryNova.zip",
+    "changelog": "https://raw.githubusercontent.com/tryigit/BatteryNova/refs/heads/main/CHANGELOG.md"
+}
