@@ -1,0 +1,4 @@
+on boot
+    # Disable Kernel Debugging @tryigitx
+    write /sys/module/printk/parameters/console_suspend Y
+    write /sys/module/msm_show_resume_irq/parameters/debug_mask 0
