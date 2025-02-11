@@ -13,7 +13,7 @@ This root module really helps you reduce idle battery consumption with minimal t
 
 > [!TIP]
 > If you want to learn about battery life, check out this repo. It's also very useful if you have an older device.
-> (https://github.com/tryigit/Android-Life-Knowledge).
+> ([Android Life Knowledge](https://github.com/tryigit/Android-Life-Knowledge)).
 
 # Telegram 
 https://t.me/cleverestech
