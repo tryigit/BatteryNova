@@ -1,0 +1,13 @@
+# USAP Settings @tryigitx
+persist.sys.usap_pool_enabled=false
+persist.sys.dynamic_usap_enabled=false
+persist.sys.prestart.proc=false
+persist.sys.prestart.feedback.enable=false
+persist.sys.launch_response_optimization.enable=false
+persist.vendor.sys.activity_resumption_boost=false
+
+# debug.gr.swapinterval=0
+
+# Gpu Optimization @tryigitx
+debug.sf.enable_gl_backpressure=1
+persist.sys.gpu.early_app_start=false
