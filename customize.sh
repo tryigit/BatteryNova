@@ -1,4 +1,5 @@
 # tryigitx
+# shellcheck shell=sh
 
 ui_print " "
 ui_print " Version: $MODVER"
