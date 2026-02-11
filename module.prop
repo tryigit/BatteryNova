@@ -1,7 +1,7 @@
 id=battery_nova
 name=Battery Nova
-version=1.0
-versionCode=1
+version=v1.0.0
+versionCode=100
 author=tryigitx
 description=It lowers power consumption but impacts the user experience. For example, app launch times.
 updateJson=https://raw.githubusercontent.com/tryigit/BatteryNova/main/update.json
