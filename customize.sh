@@ -1,5 +1,7 @@
 # tryigitx
 
+MODVER=$(grep_prop version $MODPATH/module.prop)
+
 ui_print " "
 ui_print " Version: $MODVER"
 ui_print " Telegram: t.me/cleverestech"
