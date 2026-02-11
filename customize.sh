@@ -1,4 +1,5 @@
 # tryigitx
+# shellcheck shell=sh
 
 MODVER=$(grep_prop version $MODPATH/module.prop)
 
