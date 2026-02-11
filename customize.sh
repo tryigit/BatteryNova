@@ -1,7 +1,7 @@
 # tryigitx
 # shellcheck shell=sh
 
-MODVER=$(grep_prop version $MODPATH/module.prop)
+MODVER=$(grep_prop version "$MODPATH"/module.prop)
 
 ui_print " "
 ui_print " Version: $MODVER"
@@ -24,5 +24,10 @@ if [ "$API" -lt 28 ]; then
     ui_print "❗ You can't use this module on Android < 9"
     abort " "
 fi
+
+ui_print "- Setting permissions"
+set_perm_recursive "$MODPATH" 0 0 0755 0644
+set_perm "$MODPATH"/post-fs-data.sh 0 0 0755
+
 ui_print " "
 ui_print " - Done, please reboot system"
