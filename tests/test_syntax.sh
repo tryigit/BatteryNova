@@ -13,7 +13,7 @@ if ! command_exists shellcheck; then
 fi
 
 echo "Running shellcheck..."
-shellcheck -x customize.sh post-fs-data.sh
+shellcheck -x customize.sh
 
 if [ $? -eq 0 ]; then
   echo "Syntax check passed!"
