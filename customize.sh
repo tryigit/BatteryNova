@@ -1,7 +1,7 @@
 # tryigitx
 # shellcheck shell=sh
 
-MODVER=$(grep_prop version $MODPATH/module.prop)
+MODVER=$(grep_prop version "$MODPATH"/module.prop)
 
 ui_print " "
 ui_print " Version: $MODVER"
