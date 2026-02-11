@@ -25,5 +25,4 @@ if [ "$API" -lt 28 ]; then
     abort " "
 fi
 ui_print " "
-ui_print " "
 ui_print " - Done, please reboot system"
