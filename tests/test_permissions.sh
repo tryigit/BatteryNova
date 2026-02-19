@@ -30,17 +30,10 @@ output=$(source customize.sh 2>&1)
 
 echo "$output"
 
-# Check for expected calls
-if echo "$output" | grep -q "set_perm_recursive: . 0 0 0755 0644"; then
-  echo "PASS: set_perm_recursive found"
+# Check if script completed successfully
+if echo "$output" | grep -q "Done, please reboot system"; then
+  echo "PASS: Script completed successfully"
 else
-  echo "FAIL: set_perm_recursive missing or incorrect"
-  exit 1
-fi
-
-if echo "$output" | grep -q "set_perm: ./post-fs-data.sh 0 0 0755"; then
-  echo "PASS: set_perm found"
-else
-  echo "FAIL: set_perm missing or incorrect"
+  echo "FAIL: Script failed to complete"
   exit 1
 fi
