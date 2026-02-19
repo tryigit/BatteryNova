@@ -20,6 +20,13 @@ run_test() {
 
     echo "Running test: $description (API='$api_level')"
 
+    # Create a temporary directory for the test
+    local TEST_DIR=$(mktemp -d)
+
+    # Copy necessary files to the temporary directory
+    mkdir -p "$TEST_DIR/system/etc/init"
+    cp "system/etc/init/battery_tweaks.rc" "$TEST_DIR/system/etc/init/"
+
     # Use a subshell to isolate the test environment
     (
         # Mock functions required by customize.sh
@@ -39,7 +46,7 @@ run_test() {
         }
 
         # Mock variables
-        export MODPATH="."
+        export MODPATH="$TEST_DIR"
         export API="$api_level"
 
         # Source the script under test
@@ -48,6 +55,9 @@ run_test() {
     ) > /dev/null 2>&1
 
     local exit_code=$?
+
+    # Clean up
+    rm -rf "$TEST_DIR"
 
     if [ "$expected_result" = "success" ]; then
         if [ $exit_code -eq 0 ]; then
