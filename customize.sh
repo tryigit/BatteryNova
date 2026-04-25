@@ -31,10 +31,6 @@ ui_print "
 
 RC_FILE="$MODPATH/system/etc/init/battery_tweaks.rc"
 
-if [ ! -e "/sys/module/printk/parameters/console_suspend" ]; then
-    ui_print "  Disabling console_suspend write (feature missing)"
-    sed -i 's|^\([[:space:]]*\)write[[:space:]][[:space:]]*/sys/module/printk/parameters/console_suspend|\1# write /sys/module/printk/parameters/console_suspend|' "$RC_FILE"
-fi
 
 if [ ! -e "/sys/module/msm_show_resume_irq/parameters/debug_mask" ]; then
     ui_print "  Disabling msm_show_resume_irq write (feature missing)"
