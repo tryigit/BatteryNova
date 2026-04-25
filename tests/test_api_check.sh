@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Set the path to customize.sh (relative to this script's location or assuming script is run from root)
 CUSTOMIZE_SH="./customize.sh"
