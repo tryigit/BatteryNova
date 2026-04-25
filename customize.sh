@@ -31,15 +31,17 @@ ui_print "
 
 RC_FILE="$MODPATH/system/etc/init/battery_tweaks.rc"
 
-if [ ! -e "/sys/module/printk/parameters/console_suspend" ]; then
-    ui_print "  Disabling console_suspend write (feature missing)"
-    sed -i 's|^\([[:space:]]*\)write[[:space:]][[:space:]]*/sys/module/printk/parameters/console_suspend|\1# write /sys/module/printk/parameters/console_suspend|' "$RC_FILE"
-fi
+disable_missing_feature() {
+    feature_name="$1"
+    sysfs_path="$2"
+    if [ ! -e "$sysfs_path" ]; then
+        ui_print "  Disabling $feature_name write (feature missing)"
+        sed -i "s|^\([[:space:]]*\)write[[:space:]][[:space:]]*$sysfs_path|\1# write $sysfs_path|" "$RC_FILE"
+    fi
+}
 
-if [ ! -e "/sys/module/msm_show_resume_irq/parameters/debug_mask" ]; then
-    ui_print "  Disabling msm_show_resume_irq write (feature missing)"
-    sed -i 's|^\([[:space:]]*\)write[[:space:]][[:space:]]*/sys/module/msm_show_resume_irq/parameters/debug_mask|\1# write /sys/module/msm_show_resume_irq/parameters/debug_mask|' "$RC_FILE"
-fi
+disable_missing_feature "console_suspend" "/sys/module/printk/parameters/console_suspend"
+disable_missing_feature "msm_show_resume_irq" "/sys/module/msm_show_resume_irq/parameters/debug_mask"
 
 ui_print "
 
