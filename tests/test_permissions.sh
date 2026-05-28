@@ -17,14 +17,6 @@ grep_prop() {
   echo "1.0"
 }
 
-set_perm() {
-  echo "set_perm: $@"
-}
-
-set_perm_recursive() {
-  echo "set_perm_recursive: $@"
-}
-
 # Run the script and capture output
 output=$(source customize.sh 2>&1)
 
